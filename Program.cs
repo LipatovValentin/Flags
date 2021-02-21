@@ -12,10 +12,10 @@ namespace Flags
         }
         public static void Check(User user)
         {
-            if ((user.Rights & UserRights.ReadComments) == UserRights.ReadComments) Console.WriteLine("You can read comments");
-            if ((user.Rights & UserRights.WriteComments) == UserRights.WriteComments) Console.WriteLine("You can write comments");
-            if ((user.Rights & UserRights.CreateUsers) == UserRights.CreateUsers) Console.WriteLine("You can create users");
-            if ((user.Rights & UserRights.DeleteUsers) == UserRights.DeleteUsers) Console.WriteLine("You can delete users");
+            if (user.Rights.HasFlag(UserRights.ReadComments)) Console.WriteLine("You can read comments");
+            if (user.Rights.HasFlag(UserRights.WriteComments)) Console.WriteLine("You can write comments");
+            if (user.Rights.HasFlag(UserRights.CreateUsers)) Console.WriteLine("You can create users");
+            if (user.Rights.HasFlag(UserRights.DeleteUsers)) Console.WriteLine("You can delete users");
         }
     }
 
